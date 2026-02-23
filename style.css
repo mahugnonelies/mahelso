@@ -1,13 +1,23 @@
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+  scroll-behavior: smooth;
 }
 
 header {
-  background: #1e88e5;
-  color: white;
+  position: fixed;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(10px);
   padding: 15px 0;
+  z-index: 1000;
 }
 
 .container {
@@ -15,36 +25,99 @@ header {
   margin: auto;
 }
 
-nav ul {
-  list-style: none;
+.nav {
   display: flex;
-  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav a {
+  margin-left: 25px;
   color: white;
   text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #38bdf8;
 }
 
 .hero {
-  padding: 80px 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background: #f5f5f5;
+  background: linear-gradient(135deg, #1e3a8a, #0f172a);
 }
 
-.apps-section {
-  padding: 50px 0;
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.btn {
+  padding: 12px 25px;
+  background: #38bdf8;
+  border-radius: 30px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: white;
+}
+
+.apps {
+  padding: 120px 0;
+  text-align: center;
+}
+
+.section-title {
+  margin-bottom: 50px;
+  font-size: 2rem;
+}
+
+.app-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .app-card {
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin-bottom: 20px;
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 20px;
+  width: 280px;
+  transition: 0.4s;
+}
+
+.app-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.app-card a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.contact {
+  padding: 100px 0;
+  text-align: center;
 }
 
 footer {
-  background: #222;
-  color: white;
+  padding: 30px 0;
   text-align: center;
-  padding: 20px;
+  background: #020617;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
 }
